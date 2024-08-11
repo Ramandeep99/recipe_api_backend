@@ -12,8 +12,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-# SECRET_KEY = config('SECRET_KEY')
-SECRET_KEY = '5f9!xzp4q$^f*(3v0a&$k20%sw&q@9jg)s8+y5l2!t3d#)u4v&'
+SECRET_KEY = config('SECRET_KEY')
 
 
 # Application definition
@@ -153,8 +152,9 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
-EMAIL_HOST_USER = config('EMAIL_USER', default='ramandeep@repup.co')
-EMAIL_HOST_PASSWORD = config('EMAIL_PASSWORD', default='wedx coov dkgc hgoo')
+EMAIL_HOST_USER = config('EMAIL_USER')
+EMAIL_HOST_PASSWORD = config('EMAIL_PASSWORD')
+
 
 
 REST_FRAMEWORK = {
@@ -216,7 +216,7 @@ CELERY_TIMEZONE = 'UTC'
 CELERY_BEAT_SCHEDULE = {
     'send_daily_likes_summary': {
         'task': 'recipe.tasks.send_daily_likes_summary',
-        'schedule': timedelta(seconds=10),
+        'schedule': timedelta(days=1),
     },
 }
 
