@@ -33,7 +33,7 @@ celery -A recipe worker --loglevel=info
 celery -A recipe beat --loglevel=info
 
 # Run Test Cases
-python manage.py test
+pytest
 
 # Install Coverage Tool
 pip install coverage
