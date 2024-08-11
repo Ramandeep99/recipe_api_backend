@@ -6,8 +6,6 @@ This project is a Django-based API service for managing recipes, user authentica
 
 ```bash
 # Clone the Repository
-git clone https://github.com/yourusername/recipe-api.git
-cd recipe-api
 
 # Create and Activate Virtual Environment
 python3 -m venv venv
@@ -51,6 +49,9 @@ coverage html
 
 
 ## Docker Setup Commands
+
+# Run a One-off Command: It will run a one-off command in a new container based on the web service defined in your docker-compose.yml file.
+docker compose run web django-admin startproject recipe_api /app/new_project
 
 # Build Docker Image
 docker-compose build
